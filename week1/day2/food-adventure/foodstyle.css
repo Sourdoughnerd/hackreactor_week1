@@ -1,0 +1,49 @@
+* {
+  font-family: helvetica;
+}
+h1 {
+  text-align: center;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+p {
+  color: rgb(200,218,218);
+}
+div p {
+  color: #000099; 
+}
+i {
+  font-size: 300%;
+}
+.container {
+  text-align: center;
+}
+.header {
+  font-style: italic;
+  font-size: 200%;
+}
+.content {
+  border: 1px solid purple;
+  margin: 20px auto;
+}
+.image {
+  display: inline-block;
+  margin: 2px;
+  padding: 2px;
+  border: 1px black;
+  border-style: dotted;
+}
+.boxnav {
+  display: inline;
+  margin: 12px;
+  padding: 12px;
+  border: solid 2px orange;
+  font-size: 190%;
+}
+
+#footer {
+  font-size: 100%;
+  color: black;
+}
