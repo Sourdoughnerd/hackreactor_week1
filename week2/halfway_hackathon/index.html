@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Dinner Party Wine Wizard</title>
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="http://getbootstrap.com/examples/navbar/navbar.css" rel="stylesheet">
+
+    <script src="http://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- IE support courtesy of bootstrap-->
+    <style type="text/css" >
+      body {
+        background-image: url("images/vineyard.jpg")
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Dinner Party Wine Wizard</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <span id="home"><li class="active"><a href="#">Home</a></li></span>
+              <span id="bottlecalc"><li><a href="#">Bottle Calculator</a></li></span>
+              <span class="contactme"><li><a href="#">Contact</a></li></span>
+              <span class="aboutme"><li><a href="#">About</a></li></span>
+              <!--
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+
+              </li>
+              -->
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+  <header class="page-header" style="color: white; text-align: center;">
+    <h4>Let us assist choosing wine and how many bottles are needed for your next dinner party!</h4>
+  </header><!-- /header -->
+
+  <div id="foodcontainer">
+   <!-- put pictures of food choices here -->
+    <div class="row">
+      <div class="col-sm-3 col-sm-3">
+        <div class="thumbnail">
+          <img src="images/grilledchicken.png" alt="...">
+          <div class="caption">
+            <h3>Grilled Chicken</h3>
+            <p>Grilled chicken, roast chicken, beer-can chicken, ...</p>
+            <p><span id="chicken1"><a href="#" class="btn btn-default" role="button">$</a> </span><span id="chicken2"><a href="#" class="btn btn-default" role="button">$$$</a></span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3 col-sm-3">
+        <div class="thumbnail">
+          <img src="images/appetizer.png" alt="...">
+          <div class="caption">
+            <h3>Appetizer Platter</h3>
+            <p>Having an apps only event? Bookclub?</p>
+            <p><span id="appetizers1"><a href="#" class="btn btn-default" role="button">$</a> </span><span id="appetizers2"><a href="#" class="btn btn-default" role="button">$$$</a></span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3 col-sm-3">
+        <div class="thumbnail">
+          <img src="images/ribs.png" alt="...">
+          <div class="caption">
+            <h3>Ribs</h3>
+            <p>Memorial Day? Labor Day? Smoked ribs!</p>
+            <p><span id="ribs1"><a href="#" class="btn btn-default" role="button">$</a> </span><span id="ribs2"><a href="#" class="btn btn-default" role="button">$$$</a></span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3 col-sm-3">
+        <div class="thumbnail">
+          <img src="images/pizza.png" alt="...">
+          <div class="caption">
+            <h3>Pizza</h3>
+            <p>Wine option for game night? Need a movie night pairing?</p>
+            <p><span id="pizza1"><a href="#" class="btn btn-default" role="button">$</a> </span><span id="pizza2"><a href="#" class="btn btn-default" role="button">$$$</a></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- row 2 -->
+
+    <div class="row">
+      <div class="col-sm-3 col-sm-3">
+        <div class="thumbnail">
+          <img src="images/steak.png" alt="...">
+          <div class="caption">
+            <h3>Steak</h3>
+            <p>Filet, Porterhouse, if you've got steak on the brain...</p>
+            <p><span id="steak1"><a href="#" class="btn btn-default" role="button">$</a> </span><span id="steak2"><a href="#" class="btn btn-default" role="button">$$$</a></span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3 col-sm-3">
+        <div class="thumbnail">
+          <img src="images/bolognese.png" alt="...">
+          <div class="caption">
+            <h3>Bolognese</h3>
+            <p>Italian themed dinner? Thinking of pasta with meat sauce?</p>
+            <p><span id="pastameat1"><a href="#" class="btn btn-default" role="button">$</a> </span><span id="pastameat2"><a href="#" class="btn btn-default" role="button">$$$</a></span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3 col-sm-3">
+        <div class="thumbnail">
+          <img src="images/chickenwings.png" alt="...">
+          <div class="caption">
+            <h3>Chicken Wings</h3>
+            <p>Wings your style?</p>
+            <p><span id="wings1"><a href="#" class="btn btn-default" role="button">$</a> </span><span id="wings2"><a href="#" class="btn btn-default" role="button" name="wings2">$$$</a></span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3 col-sm-3">
+        <div class="thumbnail">
+          <img src="images/pork.png" alt="...">
+          <div class="caption">
+            <h3>Pork</h3>
+            <p>Serving roasted pork loin or other types of pork?</p>
+            <p><span id="pork1"><a href="#" class="btn btn-default" role="button">$</a> </span><span id="pork2"><a href="#" class="btn btn-default" role="button" name="pork2">$$$</a></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- row 3 -->
+
+    <div class="row">
+      <div class="col-sm-3 col-sm-3">
+        <div class="thumbnail">
+          <img src="images/vegpasta.png" alt="...">
+          <div class="caption">
+            <h3>Vegetarian Pasta</h3>
+            <p>For all of the non-carnivorous...</p>
+            <p><span id="pastaveg1"><a href="#" class="btn btn-default" role="button">$</a> </span><span id="pastaveg2"><a href="#" class="btn btn-default" name="splurge_chicken">$$$</a></span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3 col-sm-3">
+        <div class="thumbnail">
+          <img src="images/burgers.png" alt="...">
+          <div class="caption">
+            <h3>Burgers</h3>
+            <p>Wanna have a BBQ and serve up some hamburgers?</p>
+            <p><span id="hamburger1"><a href="#" class="btn btn-default" role="button">$</a> </span><span id="hamburger2"><a href="#" class="btn btn-default" role="button">$$$</a></span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3 col-sm-3">
+        <div class="thumbnail">
+          <img src="images/chocolatedesserts.png" alt="...">
+          <div class="caption">
+            <h3>Chocolate Desserts</h3>
+            <p>Which to choose for all of the chocolate or dessert lovers out there?</p>
+            <p><span id="dessert1"><a href="#" class="btn btn-default" role="button">$</a> </span><span id="dessert2"><a href="#" class="btn btn-default" role="button">$$$</a></span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3 col-sm-3">
+        <div class="thumbnail">
+          <img src="images/taco.png" alt="...">
+          <div class="caption">
+            <h3>Tacos</h3>
+            <p>Thinking of serving tacos or fajitas?</p>
+            <span id="tacos1"><p><a href="#" class="btn btn-default" role="button">$</a></span> <span id="tacos2"><a href="#" class="btn btn-default" role="button">$$$</a></p></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- end foodcontainer -->
+  <hr>
+
+<!-- wine display area -->
+  <!--<div id = "bottles"> -->
+    <!-- new wine -->
+    <div id="Barolo" class="bottles">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3><a href="http://www.bevmo.com/Shop/ProductList.aspx/Wine/Barolo/_/N-13Z1z141c5?DNID=Wine">Barolo</a></h3>
+          <p>Barolo might be a great selection!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- new wine -->
+    <div id="Beaujolais" class="bottles">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3><a href="http://www.bevmo.com/Shop/ProductList.aspx/Wine/_/N-13Z1z141rjZ1z141rlZ1z141r9?DNID=Wine">Beaujolais</a></h3>
+          <p>Beaujolais might be a fantastic pick! </p>
+        </div>
+      </div>
+    </div>
+
+      <!-- new wine -->
+    <div id="Bordeaux" class="bottles">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3><a href="http://www.bevmo.com/Shop/ProductList.aspx/Wine/Bordeaux/_/N-13Z1z141hm?DNID=Wine">Bordeaux</a></h3>
+          <p>A bordeaux would be a wonderful pairing! </p>
+        </div>
+      </div>
+    </div>
+
+
+   <!-- new wine -->
+    <div id="Cabernetfranc" class="bottles">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3><a href="http://www.bevmo.com/Shop/ProductList.aspx/Wine/_/N-13Z1z13zta?DNID=Wine">Cabernet Franc</a></h3>
+          <p>Cabernet franc might be a wonderful pick!</p>
+        </div>
+      </div>
+    </div>
+
+   <!-- new wine -->
+    <div id="Cabernetsauv" class="bottles">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3><a href="http://www.bevmo.com/Shop/ProductList.aspx/Wine/Cabernet-Sauvignon/_/N-13Z1z141x7?DNID=Wine">Cabernet Sauvignon</a></h3>
+          <p>Cabernet sauvignon might be a wonderful selection!</p>
+        </div>
+      </div>
+    </div>
+
+      <!-- new wine -->
+    <div id="Champagne" class="bottles">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3><a href="http://www.bevmo.com/Shop/ProductList.aspx/Wine/Champagne-Sparkling/_/N-13Z1z141wk?DNID=Wine">Champagne</a></h3>
+          <p>Champagne might be a wonderful choice!</p>
+        </div>
+      </div>
+    </div>
+
+       <!-- new wine -->
+    <div id="Chardonnay" class="bottles">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3><a href="http://www.bevmo.com/Shop/ProductList.aspx/Wine/Chardonnay/_/N-13Z1z141u0?DNID=Wine">Chardonnay</a></h3>
+          <p>Chardonnay might be a fantastic choice!</p>
+        </div>
+      </div>
+    </div>
+
+      <!-- new wine -->
+    <div id="Cheninblanc" class="bottles">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3><a href="http://www.bevmo.com/Shop/ProductList.aspx/Wine/Chenin-Blanc/_/N-13Z1z140ee?DNID=Wine">Chenin Blanc</a></h3>
+          <p>Chenin black might be a fantastic selection!</p>
+        </div>
+      </div>
+    </div>
+
+        <!-- new wine -->
+    <div id="Chiant" class="bottles">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3><a href="http://www.bevmo.com/Shop/ProductList.aspx/Wine/Chianti/_/N-13Z1z141rs?DNID=Wine">Chianti</a></h3>
+          <p>Chenin black might be a fantastic selection!</p>
+        </div>
+      </div>
+    </div>
+
+      <!-- new wine -->
+    <div id="Cotesdurhone" class="bottles">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3><a href="http://www.bevmo.com/Shop/ProductList.aspx/Wine/_/N-13Z1z141fxZ1z141rfZ1z140ys?DNID=Wine">Cotes du Rhone</a></h3>
+          <p>Chenin black might be a fantastic selection!</p>
+        </div>
+      </div>
+    </div>
+
+      <!-- new wine -->
+    <div id="Merlot" class="bottles">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3><a href="http://www.bevmo.com/Shop/ProductList.aspx/Wine/Merlot/_/N-13Z1z141tp?DNID=Wine">Merlot</a></h3>
+          <p>Merlot might be an excellent selection!</p>
+        </div>
+      </div>
+    </div>
+
+     <!-- new wine -->
+    <div id="Pinotgris" class="bottles">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3><a href="http://www.bevmo.com/Shop/ProductList.aspx/Wine/Pinot-Grigio-Pinot-Gris/_/N-13Z1z141tu?DNID=Wine">Pinot Grigio</a></h3>
+          <p>Pinot grigio would be an excellent pairing!</p>
+        </div>
+      </div>
+    </div>
+
+      <!-- new wine -->
+    <div id="Pinotnoir" class="bottles">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3><a href="http://www.bevmo.com/Shop/ProductList.aspx/Wine/Pinot-Noir/_/N-13Z1z141w8?DNID=Wine">Pinot Noir</a></h3>
+          <p>Pinot noir would be an excellent choice!</p>
+        </div>
+      </div>
+    </div>
+
+      <!-- new wine -->
+    <div id="Port" class="bottles">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3><a href="http://www.bevmo.com/Shop/ProductList.aspx/Wine/Port/_/N-13Z1z13s4u?DNID=Wine">Port</a></h3>
+          <p>Port will be a superb pairing!</p>
+        </div>
+      </div>
+    </div>
+
+     <!-- new wine -->
+    <div id="Prosecco" class="bottles">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3><a href="http://www.bevmo.com/Shop/ProductList.aspx/Wine/_/N-13Z1z141wkZ1z141g5?DNID=Wine">Prosecco</a></h3>
+          <p>Prosecco might be a superb selection!</p>
+        </div>
+      </div>
+    </div>
+
+     <!-- new wine -->
+    <div id="Rose" class="bottles">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3><a href="http://www.bevmo.com/Shop/ProductList.aspx/Wine/_/N-13Z1z141rb?DNID=Wine">Rose (dry)</a></h3>
+          <p>Rosé would be a superb pick!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- new wine -->
+    <div id="Sangiovese" class="bottles">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3><a href="http://www.bevmo.com/Shop/ProductList.aspx/Wine/_/N-52Z13?DNID=Wine">Sangiovese</a></h3>
+          <p>Sangiovese would be an excellent pairing!</p>
+        </div>
+      </div>
+    </div>
+
+     <!-- new wine -->
+    <div id="Zinfandel" class="bottles">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3><a href="http://www.bevmo.com/Shop/ProductList.aspx/Wine/Zinfandel/_/N-13Z1z141pp?DNID=Wine">Zinfandel</a></h3>
+          <p>Zinfandel would be a superb pairing!</p>
+        </div>
+      </div>
+    </div>
+<!--</div>--> <!-- end bottles -->
+
+  <div id="bottlecalculator" style="color: white;">
+  <h2>Need to know how many bottles of wine to buy for your party? No problem! Use the handy calculator below!</h2>
+      <input type="text" id ="coursecount1" class="form-control" name="cousecount" placeholder="Number of Courses Served">
+      <input type="text" id="guestcount1" class="form-control" name="peoplecount" placeholder="Number of Guests">
+      <span id="bottlecalcfun"><a href="#" class="btn btn-default" role="button">Calculate!</a></span>
+
+      <h3 id="bottleanswer" style="display: none;">Bottles of wine needed:</h3>
+  </div> <!-- end bottlecalculator -->
+
+
+  <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center" style="color: white;">
+                    <h2>A little bit About Me</h2>
+                    <p class="lead"><i>A bit more about me....I like to BBQ and practice coding. Also baking. 
+                    I hope to attend Hack Reactor to polish and expand my skills and portfolio! Contact me by <a class="blue" target=_blank href="mailto:graceh@absoludicrous.com">Clicking Here</a>
+                    </i></p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+  <div id="contact" style="color: white;">
+  <!-- form to contact with info -->
+  <h4>Please get in touch!</h4>
+  <form action="//formspree.io/graceh@absoludicrous.com" method="POST">
+      <div class="form-group">
+        <label for="visitoremail">Email address</label>
+        <input type="email" class="form-control" id="visitoremail" placeholder="Email">
+      </div>
+      
+      <div class="form-group">
+        <label for="visitorname">Please Enter Your Full Name</label>
+        <input type="text" class="form-control" id="visitorname" placeholder="First Last">
+        <p class="help-block" style="color: white;">Questions? Concerns? Wanna hear more?. Please leave feedback!</p>
+      </div>
+      <div>
+        <textarea class="form-control" rows="3"></textarea>
+      </div>
+      <div class="checkbox">
+        <p class="checkbox>">How many dinner parties do you have per month?</p>
+        <label>
+          <input type="checkbox"> 1 to 5 parties per year
+        </label>
+       <label>
+         <input type="checkbox"> 5+ parties per year
+        </label>
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form> 
+  </div> <!-- end contact -->
+</div> <!-- /container -->
+<footer style="color: gray; text-align: center;">
+  <span class="contactme"><a href="#">Contact</a></span> or <span class="aboutme"><a href="#">About</a></span>
+</footer>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <!-- courtest of Bootstrao - IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script type="text/javascript">
+      //bottle calculator
+
+      var bottles_needed_count = function(peoplecount, coursecount) {
+      var glass_per_meal = .75 // since it's not 1 glass per meal, 
+               // glass fill level
+      var glasses_per_bottle = 4.25 // it's about 4.25 full glasses per bottle
+      var glasses_needed_count = coursecount * peoplecount * glass_per_meal
+      return Math.ceil(glasses_needed_count / glasses_per_bottle)
+    }
+    </script>
+
+    <script>
+    $( document ).ready(function() {
+      // when page first loads, the original picture is shown for 5 seconds and fades out
+      $(".bottles").hide()
+      $("#bottlecalculator").hide()
+      $("#contact").hide()
+
+      // show all food pictures (bootstrap menu, with thumbnails)
+    $('#tacos1').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#Rose").show()
+      })
+
+    $('#tacos2').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#Zinfandel").show()
+      })
+
+    $('#hamburger1').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#Prosecco").show()
+      })
+
+    $('#hamburger2').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#Pinotnoir").show()
+      })
+
+    $('#dessert1').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#Cabernetsauv").show()
+      });
+
+    $('#dessert2').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#Port").show()
+      });
+
+    $('#pastaveg1').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#Chianti").show()
+      });
+
+    $('#pastaveg2').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#Pinotnoir").show()
+      });
+
+    $('#pork1').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#Pinotgris").show()
+      });
+
+    $('#pork2').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#Cotesdurhone").show()
+      $("#Pinotnoir").show()
+      });
+
+    $('#chicken1').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#Cheninblanc").show()
+      $("#Zinfandel").show()
+      });
+
+    $('#chicken2').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#Chardonnay").show()
+      $("#Pinotnoir").show()
+      });
+
+
+    $('#wings1').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#Prosecco").show()
+      });
+
+    $('#wings2').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#Chardonnay").show()
+      });
+
+    $('#appetizers1').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#Prosecco").show()
+      });
+
+    $('#appetizers2').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#Champagne").show()
+      });
+
+    $('#ribs1').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#Beaujolais").show()
+      });
+
+    $('#ribs2').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $("#Rose").show()
+      });
+
+    $('#filet1').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#Bordeaux").show()
+      });
+
+    $('#filet2').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#Merlot").show()
+      $("#Cabernetsauv").show()
+      });
+
+    $('#pastameat1').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#Sangiovese").show()
+      });
+
+    $('#pastameat2').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#Merlot").show()
+      });
+
+    $('#pizza1').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#Sangiovese").show()
+      });
+
+    $('#pizza2').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#Merlot").show()
+      });
+
+     $('#home').on('click', function ( event ) {
+     location.reload();
+      });
+
+      $('.contactme').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#bottlecalculator").hide()
+      $("#contact").show()
+      });
+
+       $('.aboutme').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#bottlecalculator").hide()
+      $("#about").show()
+      });
+
+        $('#bottlecalc').on('click', function ( event ) {
+      $("#foodcontainer").hide()
+      $("#about").hide()
+      $("#contact").hide()
+      $(".bottles").hide()
+      $("#bottlecalculator").show()
+      });
+
+     
+
+        $('#bottlecalcfun').on('click', function (event) {
+          console.log("FRUIT")
+          event.preventDefault()
+          $("#foodcontainer").hide()
+          $("#about").hide()
+          $("#contact").hide()
+          $(".bottles").hide() 
+          var guestcount = $("#guestcount1").val();
+          var coursecount= $("#coursecount1").val();  
+          if (isNaN(guestcount) || isNaN(coursecount))  {
+            window.alert("Please enter a valid numerical value")
+          }else { 
+          var totalbottles= bottles_needed_count(guestcount, coursecount)
+          $("#bottleanswer").append(totalbottles)
+          $("#bottleanswer").show()
+         
+          }
+        });
+
+   });
+
+ 
+  </script>
+  </body>
+
+</html>
